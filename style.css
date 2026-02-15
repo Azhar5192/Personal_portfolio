@@ -1,13 +1,14 @@
-/* Modern Dark Theme & Reset */
+/* Modern Light + Colorful Theme & Reset */
 :root {
-    --bg-color: #0a0a0a;
-    --surface-color: #1a1a1a;
-    --text-primary: #ffffff;
-    --text-secondary: #a0a0a0;
-    --accent-color: #00ff88;
-    --accent-glow: rgba(0, 255, 136, 0.4);
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --bg-color: #fefefe;
+    --surface-color: rgba(43, 41, 41, 0.7);
+    --text-primary: #edf559;
+    --text-secondary: #030303;
+    --accent-color: #ea4f2d;
+    /* Vibrant Pink/Red */
+    --accent-glow: rgba(177, 56, 81, 0.3);
+    --glass-bg: rgba(255, 255, 255, 0.6);
+    --glass-border: rgba(20, 28, 185, 0.1);
     --font-main: 'Inter', sans-serif;
     --transition: all 0.3s ease;
 }
@@ -22,13 +23,21 @@
 body {
     font-family: var(--font-main);
     background-color: var(--bg-color);
+    /* Sticky Background: URL first (shows if valid), Gradient second (fallback/behind) */
+    background: url('image.jpg'), linear-gradient(120deg, #84fab0 0%, #ecbef8 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
 }
 
 /* Typography */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-weight: 700;
     line-height: 1.2;
 }
@@ -52,7 +61,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(10, 10, 10, 0.8);
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 1000;
@@ -79,7 +89,8 @@ nav a {
     font-weight: 500;
 }
 
-nav a:hover, nav a.active {
+nav a:hover,
+nav a.active {
     color: var(--accent-color);
 }
 
@@ -126,8 +137,9 @@ nav a:hover, nav a.active {
 .btn {
     display: inline-block;
     padding: 12px 30px;
+    padding: 12px 30px;
     background: var(--accent-color);
-    color: #000;
+    color: #fff;
     font-weight: 700;
     border-radius: 50px;
     box-shadow: 0 0 20px var(--accent-glow);
@@ -219,11 +231,12 @@ section {
 .project-card:hover {
     transform: translateY(-10px);
     border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .project-img {
     height: 200px;
-    background: #222;
+    background: #f0f0f0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -280,19 +293,20 @@ footer {
     .hero-content h1 {
         font-size: 2.8rem;
     }
-    
+
     .about-grid {
         grid-template-columns: 1fr;
     }
-    
+
     nav {
-        display: none; /* Mobile menu to be implemented if needed */
+        display: none;
+        /* Mobile menu to be implemented if needed */
     }
-    
+
     .header {
         justify-content: center;
     }
-    
+
     .btn {
         width: 100%;
         margin: 10px 0 0 0;
